@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./routes/home/home-component";
+import AllTolls from "./routes/all-tolls/allTolls-component";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route index={true} element={<Home></Home>}></Route>
+      <Route path="/AllTolls" element={<AllTolls></AllTolls>}></Route>
+    </Routes>
   );
-}
+};
 
 export default App;
