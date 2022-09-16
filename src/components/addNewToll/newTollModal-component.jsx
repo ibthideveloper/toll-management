@@ -1,5 +1,8 @@
 import "./newTollModal-styles.scss";
 
+import Button from "../button/button-component";
+import NewTollsInput from "../NewTollsInput/NewTollsInput-component";
+
 const NewTollModal = ({ shown, close }) => {
   return shown ? (
     <div
@@ -16,7 +19,27 @@ const NewTollModal = ({ shown, close }) => {
           e.stopPropagation();
         }}
       >
-        <button onClick={close}>Close</button>
+        <button onClick={close}>X</button>
+
+        <div>
+          <label>Toll Name</label>
+          <br></br>
+          <input required />
+          <br></br>
+          <label>Vehicle Fare Details</label>
+          <br></br>
+
+          <div>
+            <NewTollsInput></NewTollsInput>
+            <NewTollsInput></NewTollsInput>
+            <NewTollsInput></NewTollsInput>
+            <NewTollsInput></NewTollsInput>
+          </div>
+
+          <div className="add-details-button">
+            <Button> Add details</Button>
+          </div>
+        </div>
       </div>
     </div>
   ) : null;
